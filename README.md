@@ -1,2 +1,2 @@
-# blackjack-mvc-practise
-For MVC design pattern practise I created this small blackjack game. I made a console view.
+# blackjack-mvc-practice
+For MVC design pattern practice I created this small blackjack game. I made a console view.
