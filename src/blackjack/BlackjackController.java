@@ -1,5 +1,7 @@
 package blackjack;
 
+import java.util.List;
+
 /**
  * The controller of the Blackjack game.
  * For each new game it creates an instance of {@link Blackjack}
@@ -43,6 +45,10 @@ public class BlackjackController {
 		view.showWinner(winner);
 		
 		if(winner.wantsToPlayAgain()) {
+			List<Player> allPlayers = blackjack.getPlayers();
+			Dealer dealer = (Dealer) allPlayers.get(allPlayers.size() - 1);
+			List<Player> players = allPlayers.subList(0, allPlayers.size() - 1);
+			this.blackjack = new Blackjack(dealer, players);
 			playOneGame();
 		}
 	}

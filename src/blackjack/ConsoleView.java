@@ -41,6 +41,7 @@ public class ConsoleView implements BlackjackView{
 	@Override
 	public void showWinner(Player player) {
 		System.out.println(player + " is the winner!\n");
+		this.wantToPlayAgain();
 	}
 	
 	@Override

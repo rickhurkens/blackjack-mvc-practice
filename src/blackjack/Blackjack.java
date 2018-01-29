@@ -10,7 +10,19 @@ import java.util.List;
  */
 public class Blackjack {
 	private List<Player> players;
-	private Deck deck = new Deck();
+	private Deck deck;
+
+	/**
+	 * @param dealer the {@link Dealer} player
+	 * @param players a {@link List} containing {@link Player} instances
+	 */
+	public Blackjack(Dealer dealer, List<Player> players) {
+		this.players = new ArrayList<>();
+		this.players.addAll(players);
+		this.players.add(dealer);
+		deck = new Deck();
+		dealInitialCards();
+	}
 	
 	/**
 	 * @return a {@link List} of every {@link Player} currently in the game, including the {@link Dealer}.
@@ -24,17 +36,6 @@ public class Blackjack {
 	 */
 	public Deck getDeck() {
 		return deck;
-	}
-
-	/**
-	 * @param dealer the {@link Dealer} player
-	 * @param players a {@link List} containing {@link Player} instances
-	 */
-	public Blackjack(Dealer dealer, List<Player> players) {
-		this.players = new ArrayList<>();
-		this.players.add(dealer);
-		this.players.addAll(players);
-		dealInitialCards();
 	}
 	
 	/**
@@ -82,6 +83,7 @@ public class Blackjack {
 				highest = total;
 				topPlayer = player;
 			}
+			player.emptyHand();
 		}
 		return topPlayer;
 	}

@@ -38,6 +38,7 @@ public class Deck {
 	 * each {@link Card} rank and shuffles the deck.
 	 */
 	private void fillDeckWithAllCards() {
+		cards.clear();
 		for(int i = 0; i < 4; i++) {
 			for(Card card : Card.values()) {
 				cards.add(card);

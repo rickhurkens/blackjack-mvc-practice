@@ -48,6 +48,10 @@ public class Hand {
 		return new ArrayList<>(cards);
 	}
 	
+	public void empty() {
+		cards.clear();
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder("\nHand:\n");

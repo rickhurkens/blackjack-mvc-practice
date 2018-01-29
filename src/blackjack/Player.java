@@ -59,6 +59,10 @@ public abstract class Player {
 		hand.addCard(card);
 	}
 	
+	public void emptyHand() {
+		hand.empty();
+	}
+	
 	public String toString() {
 		return name;
 	}

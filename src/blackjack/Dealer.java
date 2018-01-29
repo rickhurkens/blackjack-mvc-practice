@@ -42,6 +42,7 @@ public class Dealer extends Player {
 	
 	@Override
 	public boolean wantsToPlayAgain() {
-		return false;
+		System.out.println("dealer says: 'y'");
+		return true;
 	}
 }
